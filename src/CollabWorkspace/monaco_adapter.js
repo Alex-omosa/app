@@ -13,20 +13,15 @@ export default class MonacoConvergenceAdapter {
   }
 
   bind() {
-    console.log('testing from bind');
-
     this._initSharedData();
     this._initSharedCursors();
     this._initSharedSelection();
   }
 
   _initSharedData() {
-    console.log('testing from _initSharedData');
-
     this._contentManager = new EditorContentManager({
       editor: this._monacoEditor,
       onInsert: (index, text) => {
-        console.log(index, text);
         this._model.insert(index, text);
       },
       onReplace: (index, length, text) => {
@@ -55,8 +50,6 @@ export default class MonacoConvergenceAdapter {
   }
 
   _initSharedCursors() {
-    console.log('testing from _initSharedCursors');
-
     this._remoteCursorManager = new RemoteCursorManager({
       editor: this._monacoEditor,
       tooltips: true,
@@ -75,7 +68,6 @@ export default class MonacoConvergenceAdapter {
     this._cursorReference.share();
 
     this._monacoEditor.onDidChangeCursorPosition((e) => {
-      console.log('Changed coursor position');
       this._setLocalCursor();
     });
 
@@ -87,16 +79,12 @@ export default class MonacoConvergenceAdapter {
   }
 
   _setLocalCursor() {
-    console.log('testing from _setLocalCursor');
-
     const position = this._monacoEditor.getPosition();
     const offset = this._monacoEditor.getModel().getOffsetAt(position);
     this._cursorReference.set(offset);
   }
 
   _addRemoteCursor(reference) {
-    console.log('testing from _addRemoteCursor');
-
     const color = this._colorAssigner.getColorAsHex(reference.sessionId());
     const remoteCursor = this._remoteCursorManager.addCursor(
       reference.sessionId(),
@@ -113,8 +101,6 @@ export default class MonacoConvergenceAdapter {
   }
 
   _initSharedSelection() {
-    console.log('testing from _initSharedSelection');
-
     this._remoteSelectionManager = new RemoteSelectionManager({
       editor: this._monacoEditor,
     });
@@ -142,7 +128,6 @@ export default class MonacoConvergenceAdapter {
   }
 
   _setLocalSelection() {
-    console.log('testing from _setLocalSelection');
     const selection = this._monacoEditor.getSelection();
     if (!selection.isEmpty()) {
       const start = this._monacoEditor

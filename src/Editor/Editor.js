@@ -1,16 +1,13 @@
-import React, { Component, useState, useEffect } from 'react';
-import { EditorContentManager } from '@convergencelabs/monaco-collab-ext';
+import React, { useState } from 'react';
 
 import MonacoEditor from 'react-monaco-editor';
 import MonacoConvergenceAdapter from './../CollabWorkspace/monaco_adapter';
 import Convergence from '@convergence/convergence';
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const username = 'User-' + Math.round(Math.random() * 10000);
-const credentials = { username: 'Alex-omosa', password: '123' };
+
 var DOMAIN_URL = 'http://104.237.135.27:8000/api/realtime/convergence/default';
 
 async function convergenceConnect(monaco, editor) {
-  console.log('editorvalue', 'editorvalue');
   const monacoModel = monaco.getModel();
   const editorValue = monacoModel.getValue();
   const domain = await Convergence.connect(DOMAIN_URL, 'Alex-omosa', 'Alex');
@@ -27,13 +24,9 @@ async function convergenceConnect(monaco, editor) {
   // const root = model.root();
 
   const text = model.elementAt('text');
-  // console.log(text);
 
   const adapter = new MonacoConvergenceAdapter(monaco, text);
   adapter.bind();
-  // text.insert(0, 'Why ');
-  console.log(text.value());
-  console.log(model.collaborators());
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
