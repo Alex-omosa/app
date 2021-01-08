@@ -6,26 +6,29 @@ import Convergence from '@convergence/convergence';
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var DOMAIN_URL = 'http://104.237.135.27:8000/api/realtime/convergence/default';
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+const user = getRandomInt(20);
 async function convergenceConnect(monaco, editor) {
   const monacoModel = monaco.getModel();
   const editorValue = monacoModel.getValue();
-  const domain = await Convergence.connect(DOMAIN_URL, 'Alex-omosa', 'Alex');
+
+  const domain = await Convergence.connectAnonymously(DOMAIN_URL, user);
   // Model Service: Provides services to store, retrieve, and edit shared data models.
   const modelService = domain.models();
-  const model = await modelService.openAutoCreate({
-    collection: 'employee',
-    id: 123,
+  const realTimeModel = await modelService.openAutoCreate({
+    collection: 'example-monaco',
+    id: 'convergenceExampleId',
     data: {
       text: editorValue,
     },
   });
 
-  // const root = model.root();
+  const realTimeString = realTimeModel.elementAt('text');
 
-  const text = model.elementAt('text');
-
-  const adapter = new MonacoConvergenceAdapter(monaco, text);
+  //Binding to the monaco editor
+  const adapter = new MonacoConvergenceAdapter(monaco, realTimeString);
   adapter.bind();
 }
 
@@ -40,7 +43,7 @@ const options = {
 function CodeEditor() {
   const [theme, setTheme] = useState('vs-dark');
   function toggleTheme() {
-    theme === 'vs-light' ? setTheme('vs-dark') : setTheme('vs-light');
+    return theme === 'vs-light' ? setTheme('vs-dark') : setTheme('vs-light');
   }
 
   function editorDidMount(monaco, editor) {
