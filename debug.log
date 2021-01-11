@@ -1,0 +1,72 @@
+[0111/073528.820:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0111/073529.461:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/074529.631:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/074530.437:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0972734e-a107-460b-8164-d52ae1f773d0: The system cannot find the path specified. (0x3)
+[0111/074530.940:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0c14c469-3446-4c83-9913-c07d1aa7df05: The system cannot find the path specified. (0x3)
+[0111/074531.305:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\0d1efe41-8094-428b-8d62-f07121568d2a: The system cannot find the path specified. (0x3)
+[0111/074531.778:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\13399c6f-0f4a-4fe4-82bb-92493a9c41ec: The system cannot find the path specified. (0x3)
+[0111/074532.103:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\2b84f21c-5502-482d-b374-8a73214704ac: The system cannot find the path specified. (0x3)
+[0111/074532.357:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\31a20ed8-579a-4718-9b0d-c11b9d7b6378: The system cannot find the path specified. (0x3)
+[0111/074532.996:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\365b7e0d-0126-4564-8607-963034b7b1de: The system cannot find the path specified. (0x3)
+[0111/074533.543:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\44f9d451-194a-4990-b813-60da01352006: The system cannot find the path specified. (0x3)
+[0111/074534.228:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\4a09ba27-9dd8-47b7-9f30-826d2874c8c2: The system cannot find the path specified. (0x3)
+[0111/074534.406:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\4b873701-b4e4-49ce-8e37-54a21222c61b: The system cannot find the path specified. (0x3)
+[0111/074534.725:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\58d917ad-2bfd-4a19-869a-9593753dff28: The system cannot find the path specified. (0x3)
+[0111/074535.058:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\5a64108a-ae7b-499d-84c7-1ac719bae949: The system cannot find the path specified. (0x3)
+[0111/074535.215:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\5d324225-4483-427f-bc81-9ef670ed583a: The system cannot find the path specified. (0x3)
+[0111/074535.671:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\797a2a83-bef3-48a2-8de2-e36efe2799df: The system cannot find the path specified. (0x3)
+[0111/074535.758:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\7cc29e3b-44ec-4f3d-8e52-d016fc1ee9df: The system cannot find the path specified. (0x3)
+[0111/074536.004:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\a2907407-26b1-4a1a-ab1d-b37b038dbbd2: The system cannot find the path specified. (0x3)
+[0111/074536.256:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\a5b6cf8f-93b1-45ce-8601-9a8390560636: The system cannot find the path specified. (0x3)
+[0111/074536.457:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\a8d15a7e-3936-42a9-807d-43a6dab3cefd: The system cannot find the path specified. (0x3)
+[0111/074536.688:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\aa6edea7-86cf-4a97-915b-0f55c562c168: The system cannot find the path specified. (0x3)
+[0111/074537.143:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\ae28ca06-19d8-4ff6-bd45-31edfac066f4: The system cannot find the path specified. (0x3)
+[0111/074537.643:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\b32ab28f-b70b-4298-81ef-787273565c80: The system cannot find the path specified. (0x3)
+[0111/074538.036:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\b729093f-a4f1-4454-9a5c-a87e05e3ea35: The system cannot find the path specified. (0x3)
+[0111/074538.076:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\bc4a0519-613a-4dc6-9196-95af32be1c36: The system cannot find the path specified. (0x3)
+[0111/074538.481:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\c1c66642-ba7d-4ac5-96cd-79cab158eb55: The system cannot find the path specified. (0x3)
+[0111/074538.555:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\e0480956-5622-4e7d-82d2-c6228028a0ca: The system cannot find the path specified. (0x3)
+[0111/074538.676:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\e9766c25-ec1e-4ecc-bd05-719fc05e69af: The system cannot find the path specified. (0x3)
+[0111/074539.012:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\ef1898f3-77a2-421e-9bc8-adafa0e3d1b0: The system cannot find the path specified. (0x3)
+[0111/074539.465:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\f4d470fd-0526-4fd7-9da5-d37dacb41883: The system cannot find the path specified. (0x3)
+[0111/074539.674:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\f74dd936-b184-4ed5-97b1-c7c4ef6a8c2f: The system cannot find the path specified. (0x3)
+[0111/074540.047:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Alex\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\fa61741f-0013-4571-bc19-96b2c2e79031: The system cannot find the path specified. (0x3)
+[0111/074540.047:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0111/074540.047:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/074540.048:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/075029.461:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/080529.510:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/082029.528:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/083529.614:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/085029.686:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/090529.760:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/092029.788:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/093529.841:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/095029.841:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/100529.874:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/102029.908:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/103530.009:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/105030.009:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/110530.011:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/112030.011:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/113358.589:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/113530.012:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/115030.091:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/120530.115:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/122030.711:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/123530.711:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/125030.831:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/130530.860:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/132030.895:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/133531.318:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/135031.564:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/140531.674:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/141853.155:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/142033.162:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/143533.175:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/145033.489:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/150533.644:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/152034.400:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/153535.321:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/155035.524:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0111/160535.557:ERROR:crash_report_database_win.cc(455)] unexpected header

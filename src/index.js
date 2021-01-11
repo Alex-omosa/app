@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './code-editor-config';
+
+const domainUrl = window.CodeEditorConfig.DOMAIN_URL;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App domainUrl={domainUrl} />
   </React.StrictMode>,
   document.getElementById('root')
 );
