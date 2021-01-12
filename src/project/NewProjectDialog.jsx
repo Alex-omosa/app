@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 
 export default function NewProjectDialog({ onOk }) {
   let [projectName, setProjectName] = useState('');
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);

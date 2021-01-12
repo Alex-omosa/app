@@ -13,7 +13,7 @@ export default function Login({ domainUrl, onLogin }) {
     inProgress: false,
     username: '',
     password: '',
-    anonymous: window.CodeEditorConfig.ANONYMOUS_LOGIN,
+    anonymous: window.CodeEditorConfig.ANONYMOUS_AUTH,
   });
   function handleUsername(e) {
     setUser({ ...user, username: e.target.value });
@@ -25,11 +25,11 @@ export default function Login({ domainUrl, onLogin }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    handleLogin();
+    handleLogin(domainUrl);
     setUser({ ...user, username: '', password: '' });
   }
 
-  async function handleLogin() {
+  async function handleLogin(domainUrl) {
     setUser({ ...user, inProgress: true });
     //TODO: ERROR HANDLING
     if (user.anonymous) {
@@ -39,57 +39,64 @@ export default function Login({ domainUrl, onLogin }) {
       );
       onLogin(domain);
     } else {
-      const domain = await Convergence.connect(
-        domainUrl,
-        user.username,
-        user.password
-      );
-      onLogin(domain);
+      try {
+        const domain = await Convergence.connect(
+          domainUrl,
+          user.username,
+          user.password
+        );
+        onLogin(domain);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
   return (
     <Container component="main" maxWidth="xs">
-      <div>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="username"
-          label={user.anonymous ? 'Display Name' : 'Username'}
-          name="username"
-          autoComplete="username"
-          autoFocus
-          value={user.username}
-          onChange={handleUsername}
-        />
-        <TextField
-          style={{ display: user.anonymous ? 'none' : 'block' }}
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          name="password"
-          label="Password"
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={user.password}
-          onChange={handlePassword}
-        />
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          onClick={handleSubmit}
-        >
-          Sign In
-        </Button>
-      </div>
+      <Typography component="h1" variant="h5">
+        Welcome !
+      </Typography>
+      <TextField
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        id="username"
+        label={user.anonymous ? 'Display Name' : 'Username'}
+        name="username"
+        autoComplete="username"
+        autoFocus
+        value={user.username}
+        onChange={handleUsername}
+      />
+      {/*
+       * If user is signing in anonymously
+       * Don't show the password Field,
+       * Otherwise show the field
+       */}
+      <TextField
+        style={{ display: user.anonymous ? 'none' : 'block' }}
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        name="password"
+        label="Password"
+        type="password"
+        id="password"
+        autoComplete="current-password"
+        value={user.password}
+        onChange={handlePassword}
+      />
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        color="primary"
+        onClick={handleSubmit}
+      >
+        Sign In
+      </Button>
     </Container>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import NewProjectDialog from './NewProjectDialog';
@@ -6,17 +6,10 @@ import NewProjectDialog from './NewProjectDialog';
 const PROJECT_COLLECTION_ID = 'projects';
 
 function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
-  function handleOpenProject(modelId) {
+  async function handleOpenProject(modelId) {
     // set opening to true.
-    modelService
-      .open(modelId)
-      .then((model) => {
-        onOpen(model);
-      })
-      .catch((e) => {
-        // replace with UI notification.
-        console.error(e);
-      });
+    const model = await modelService.open(modelId);
+    onOpen(model);
   }
 
   async function handleNewProjectOk(projectName) {
@@ -47,13 +40,13 @@ function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
           open
         </Button>
         {/*
-         *Button to open dialog for creation a new project
+         *Button to open dialog for creating a new project
          */}
 
         <NewProjectDialog onOk={handleNewProjectOk} />
 
         {/*
-         *Button to open dialog for creation a new project
+         *Button to open dialog for creating a new project
          */}
         <Button variant="contained" color="primary" onClick={handleDelete}>
           delete
