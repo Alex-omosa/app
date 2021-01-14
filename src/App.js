@@ -36,6 +36,7 @@ function App({ domainUrl }) {
         .activities()
         .join(model.modelId())
         .then((a) => (activity = a)),
+
       domain
         .chat()
         .create({

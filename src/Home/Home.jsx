@@ -6,6 +6,9 @@ import { StatusBar } from './../TopBar';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+//
+import ParticipantsList from './../participants/ParticipantsList';
+
 function Home({
   rtModel,
   chatRoom,
@@ -33,23 +36,27 @@ function Home({
 
         <Grid item xs={8}>
           {/**
-           * The code Editor Section
+           * Center Panel
            */}
           <Paper square>
             <Editor />
           </Paper>
           {/**
-           * End of the code Editor Section
+           * End of Center Panel
            */}
         </Grid>
 
         <Grid item xs={2}>
           {/*
-           * Chat and Activity Section
+           * Chat and Participants Panel
            */}
-          <Paper square> Chat and Activity</Paper>
+          <Paper square>
+            <div>Participants</div>
+            <ParticipantsList activity={activity} />
+            <div>Chat</div>
+          </Paper>
           {/**
-           *End of Chat and Activity Section
+           *End of Chat and Participants Panel
            */}
         </Grid>
       </Grid>

@@ -31,13 +31,20 @@ export default function Login({ domainUrl, onLogin }) {
 
   async function handleLogin(domainUrl) {
     setUser({ ...user, inProgress: true });
-    //TODO: ERROR HANDLING
+
     if (user.anonymous) {
-      const domain = await Convergence.connectAnonymously(
-        domainUrl,
-        user.username
-      );
-      onLogin(domain);
+      try {
+        const domain = await Convergence.connectAnonymously(
+          domainUrl,
+          user.username
+        );
+        onLogin(domain);
+      } catch (error) {
+        console.error(
+          'Connecting to the Convergence server Anonymously,(Convergence.connectAnonymously) FAILED! ',
+          error
+        );
+      }
     } else {
       try {
         const domain = await Convergence.connect(
@@ -47,7 +54,10 @@ export default function Login({ domainUrl, onLogin }) {
         );
         onLogin(domain);
       } catch (error) {
-        console.error(error);
+        console.error(
+          'Connecting to the Convergence server,(Convergence.connect) FAILED! ',
+          error
+        );
       }
     }
   }
@@ -72,7 +82,6 @@ export default function Login({ domainUrl, onLogin }) {
       {/*
        * If user is signing in anonymously
        * Don't show the password Field,
-       * Otherwise show the field
        */}
       <TextField
         style={{ display: user.anonymous ? 'none' : 'block' }}
