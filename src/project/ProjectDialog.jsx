@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+//Matrial-UI
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+//Material-UI
 import NewProjectDialog from './NewProjectDialog';
 import ProjectList from './ProjectList';
 
+//Check!!!
 const PROJECT_COLLECTION_ID = 'projects';
 
 function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
@@ -11,25 +16,42 @@ function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
   const [loaded, setLoaded] = useState(false);
   const [selected, setSelected] = useState(null);
   useEffect(() => {
+    // To avoid memory leaks
+    let isSubscribed = true;
     (async function loadProjects() {
-      const results = await modelService.query(
+      /*
+       *modelService.query returns the set of models matching the query via a promise.
+       */ const results = await modelService.query(
         `SELECT FROM ${PROJECT_COLLECTION_ID}`
       );
       const loadedProjects = results.data.map((model) => {
         return {
           name: model.data.name,
+          created: model.created,
           id: model.modelId,
         };
       });
-      setProjects(loadedProjects);
-      setLoaded(true);
-    })();
-  }, []);
-  console.log('loaded', projects);
+      if (isSubscribed === true) {
+        // To avoid memory leaks
+        //Prevent updating state after the component has unmounted
+        setProjects(loadedProjects);
+      }
+    })().then(() => setLoaded(true));
+
+    //Clean up function below . To avoid memory leaks
+    return () => (isSubscribed = false);
+  }, [modelService, projects]);
 
   async function handleOpenProject(modelId) {
-    // set opening to true.
+    // set opening to true.//Loading opening
+
+    /*
+     *To work with an existing model in real time you must open it.
+     *modelService.open() returns a realTime Model
+     */
     const model = await modelService.open(modelId);
+    //IDEA?? We can also persist this realTime Model to the
+    //Redux Store instead of drilling it down
     onOpen(model);
   }
 
@@ -54,7 +76,10 @@ function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
   function handleSelectProject(projectId) {
     setSelected(projectId);
   }
-  function handleDelete() {}
+  function handleDelete() {
+    //Deleting a model
+    modelService.remove(selected);
+  }
   function handleOpen() {
     handleOpenProject(selected);
   }
@@ -68,28 +93,30 @@ function ProjectDialog({ collectionId, onOpen, modelService, onLogout }) {
       />
 
       <div>
-        <button
-          disabled={selected === null}
-          className="app-button"
-          onClick={handleOpen}
-        >
-          Open
-        </button>
-        <Button variant="contained" color="primary" onClick={handleOpen}>
-          open
-        </Button>
-        {/*
-         *Button to open dialog for creating a new project
-         */}
-
-        <NewProjectDialog onOk={handleNewProjectOk} />
-
-        {/*
-         *Button to open dialog for creating a new project
-         */}
-        <Button variant="contained" color="primary" onClick={handleDelete}>
-          delete
-        </Button>
+        <ButtonGroup variant="contained">
+          <Button
+            disabled={selected === null}
+            color="primary"
+            onClick={handleOpen}
+          >
+            open
+          </Button>
+          {/*
+           *Button to open dialog for creating a new project
+           */}
+          <NewProjectDialog onOk={handleNewProjectOk} />
+          {/*
+           *Button to open dialog for creating a new project
+           */}
+          <Button
+            disabled={selected === null}
+            color="secondary"
+            onClick={handleDelete}
+            startIcon={<DeleteIcon />}
+          >
+            delete
+          </Button>
+        </ButtonGroup>
       </div>
     </Container>
   );

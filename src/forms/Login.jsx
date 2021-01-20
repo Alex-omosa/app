@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Convergence from '@convergence/convergence';
 
 //Matertial UI
 import Button from '@material-ui/core/Button';
+import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 //End of Matertial UI
 
 export default function Login({ domainUrl, onLogin }) {
@@ -15,16 +17,18 @@ export default function Login({ domainUrl, onLogin }) {
     password: '',
     anonymous: window.CodeEditorConfig.ANONYMOUS_AUTH,
   });
+  useEffect(() => {});
   function handleUsername(e) {
     setUser({ ...user, username: e.target.value });
   }
   function handlePassword(e) {
     setUser({ ...user, password: e.target.value });
   }
+  function toggleAnonymousLogin() {
+    setUser({ ...user, anonymous: !user.anonymous });
+  }
 
   function handleSubmit(e) {
-    e.preventDefault();
-
     handleLogin(domainUrl);
     setUser({ ...user, username: '', password: '' });
   }
@@ -33,11 +37,18 @@ export default function Login({ domainUrl, onLogin }) {
     setUser({ ...user, inProgress: true });
 
     if (user.anonymous) {
+      /*
+       *If user is anonymous connect to the server anonymously
+       */
       try {
         const domain = await Convergence.connectAnonymously(
           domainUrl,
           user.username
         );
+        /*
+         *IDEA?? domain object is returned from the Convergence.connectAnonymously() above,
+         *I can persist The domain object to the REDUX store!!
+         */
         onLogin(domain);
       } catch (error) {
         console.error(
@@ -47,11 +58,18 @@ export default function Login({ domainUrl, onLogin }) {
       }
     } else {
       try {
+        /*
+         *Connect to the server
+         */
         const domain = await Convergence.connect(
           domainUrl,
           user.username,
           user.password
         );
+        /*
+         *IDEA?? domain object is returned from the Convergence.connect() above,
+         *I can persist The domain object to the REDUX store!!
+         */
         onLogin(domain);
       } catch (error) {
         console.error(
@@ -63,6 +81,17 @@ export default function Login({ domainUrl, onLogin }) {
   }
   return (
     <Container component="main" maxWidth="xs">
+      <FormControlLabel
+        control={
+          <Switch
+            checked={user.anonymous}
+            onChange={toggleAnonymousLogin}
+            name="isAnonymous"
+          />
+        }
+        label="Sign in anonymously"
+      />
+
       <Typography component="h1" variant="h5">
         Welcome !
       </Typography>

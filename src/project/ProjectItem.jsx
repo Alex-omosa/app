@@ -1,4 +1,10 @@
 import React from 'react';
+//Material-UI
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import FolderIcon from '@material-ui/icons/Folder';
+//End of  Material-UI
 
 function ProjectItem({ project, selected, onClick, onDoubleClick }) {
   const { name, id } = project;
@@ -10,13 +16,17 @@ function ProjectItem({ project, selected, onClick, onDoubleClick }) {
   }
   const color = selected ? 'teal' : 'black';
   return (
-    <div
+    <ListItem
+      button
       style={{ color }}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
     >
-      {name}
-    </div>
+      <ListItemIcon>
+        <FolderIcon />
+      </ListItemIcon>
+      <ListItemText primary={name} />
+    </ListItem>
   );
 }
 
