@@ -1,8 +1,8 @@
 import React from 'react';
 
 import MonacoEditor from 'react-monaco-editor';
-import MonacoConvergenceAdapter from './../CollabWorkspace/monaco_adapter';
-import Convergence from '@convergence/convergence';
+// import MonacoConvergenceAdapter from './../CollabWorkspace/monaco_adapter';
+// import Convergence from '@convergence/convergence';
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function convergenceConnect(monaco, editor) {}

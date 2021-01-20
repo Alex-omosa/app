@@ -11,7 +11,7 @@ function ParticipantsList({ activity }) {
       setParticipants([...participants, ActivityParticipant]); // ActivityParticipant[]
     });
     //Todo: Listen when a new user is added
-  }, []);
+  }, [activity, participants]);
 
   return (
     <div>
