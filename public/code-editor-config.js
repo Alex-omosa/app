@@ -1,5 +1,5 @@
 const CodeEditorConfig = {
-  CONVERGENCE_URL: 'ws://104.237.135.27:8000/api/realtime/convergence/default',
+  CONVERGENCE_URL: 'http://104.237.135.27:8000/api/realtime/convergence/default',
   ANONYMOUS_AUTH: true,
 };
 
