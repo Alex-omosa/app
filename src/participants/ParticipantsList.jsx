@@ -8,10 +8,10 @@ function ParticipantsList({ activity }) {
   useEffect(() => {
     // Listen on any change
     activity.participantsAsObservable().subscribe((ActivityParticipant) => {
-      setParticipants([...participants, ActivityParticipant]); // ActivityParticipant[]
+      setParticipants(ActivityParticipant); // ActivityParticipant[]
     });
     //Todo: Listen when a new user is added
-  }, [activity, participants]);
+  }, [activity]);
 
   return (
     <div>
